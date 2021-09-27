@@ -1,0 +1,46 @@
+.header {
+	grid-column: 1/8 span;
+	@media (min-width: 768px) and (max-width: 1023px) {
+		grid-column: 1/4 span;
+	}
+	@media (max-width: 767px) {
+		grid-column: 1/2 span;
+	}
+	padding-top: 48px;
+	&__logo {
+		grid-column: 1 span 1;
+		@media (min-width: 1024px) and (max-width: 1919px) {
+			grid-column: 2/3 span;
+		}
+		@media (min-width: 768px) and (max-width: 1023px) {
+			grid-column: 1 span;
+		}
+		@media (max-width: 767px) {
+			display: none;
+		}
+		display: block;
+		width: 78px;
+		height: 48px;
+	}
+	&__button {
+		grid-column: 7/9;
+		@media (min-width: 1024px) and (max-width: 1919px) {
+			grid-column: 6/8;
+		}
+		@media (min-width: 768px) and (max-width: 1023px) {
+			grid-column: 3 / span 2;
+		}
+		@media (max-width: 767px) {
+			grid-column: 1 / span 2;
+		}
+		display: block;
+		font: var(--font-text-regular);
+		color: #fff;
+		border: 2px solid #ff7f22;
+		background: transparent;
+		&:hover {
+			border: none;
+			background: #ff5722;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800&display=swap');
+@import './vars/vars';
+@import './grid/grid';
+@import './button/button';
+@import './titles/titles';
+@import './wrapper/wrapper';
+@import './header/header';
+@import './container/container';
+@import './banner/banner';
+@import './wallet/wallet';
+@import './market/market';
+@import './product-list/product-list';
+@import './storage/storage';
+@import './production/production';
+@import './robot-style/robot-style';
+@import './popup/popup';
+
+* {
+	color: #fff;
+	font-family: 'Montserrat';
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 600;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: none;
+	text-decoration: none;
+	list-style: none;
+	outline: none;
+}
+
+body {
+	background: var(--background--color-main);
+	background-repeat: no-repeat;
+}
+
+.none {
+	display: none;
+}

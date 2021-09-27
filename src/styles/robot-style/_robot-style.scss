@@ -1,0 +1,41 @@
+.robot-style {
+	&__container + &__container {
+		margin-top: 35px;
+	}
+	&__text {
+		font: var(--font-text-medium);
+	}
+	&__control {
+		display: grid;
+		align-content: center;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+		margin-top: 21px;
+		input {
+			display: none;
+		}
+		label {
+			display: flex;
+			align-items: center;
+			font: var(--font-text-sm);
+			position: relative;
+			cursor: pointer;
+			margin-left: 40px;
+			&::before {
+				position: absolute;
+				left: -34px;
+				content: '';
+				width: 20px;
+				height: 20px;
+				border: 2px solid var(--color-grey);
+				border-radius: 50px;
+			}
+		}
+		input:checked + label::before {
+			background: url(../img/radio-bg.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 80%;
+		}
+	}
+}

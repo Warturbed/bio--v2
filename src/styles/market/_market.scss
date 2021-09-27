@@ -1,0 +1,26 @@
+.market {
+	padding-top: 78px;
+	grid-column: 2/6 span;
+	@media (min-width: 768px) and (max-width: 1023px) {
+		padding-top: 60px;
+		grid-column: 1/4 span;
+	}
+	@media (max-width: 767px) {
+		padding-top: 40px;
+		grid-column: 1/2 span;
+	}
+	&__button {
+		font: var(--font-text-bold);
+		margin: 0 auto;
+		background: linear-gradient(180deg, #ff7f22 0%, #ff5722 100%);
+		margin-top: 24px;
+		width: 200px;
+		&:hover {
+			background: linear-gradient(0deg, #ff5722, #ff5722);
+		}
+		&--disabled {
+			background: #4c5865;
+			pointer-events: none;
+		}
+	}
+}
