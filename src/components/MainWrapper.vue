@@ -218,7 +218,7 @@
           </div>
         </section>
       </div>
-      <div class="popup" v-if="isPopupVisible">
+      <div class="popup" v-show="isPopupVisible">
         <div class="popup__background"></div>
         <div class="popup__content">
           <div class="popup__coin" v-show="!isRobotPopupVisible"></div>
@@ -320,13 +320,10 @@ export default {
       'PRODUCE_ROBOT'
     ]),
     addCoins() {
-      if (this.COINS.length + 1 <= 100) {
-        if (this.addFiveCoins) {
-          this.ADD_COINS(5)
-        }
-        else {
-          this.ADD_COINS(1)
-        }
+      if (!this.addFiveCoins && this.COINS.length + 1 <= 100) {
+        this.ADD_COINS(1)
+      } else if (this.addFiveCoins && this.COINS.length + 5 <= 100) {
+        this.ADD_COINS(5)
       } else {
         this.isPopupVisible = true
       }
