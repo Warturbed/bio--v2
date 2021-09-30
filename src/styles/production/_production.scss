@@ -9,9 +9,9 @@
 	&__container {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
-		grid-template-rows: repeat(2, 1fr);
+		grid-template-rows: 2fr 1fr;
 		gap: 60px 24px;
-		padding: 75px 0 236px 0;
+		padding: 75px 0 205px 0;
 		@media (min-width: 1024px) and (max-width: 1919px) {
 			padding: 38px 0 196px 0;
 			gap: 40px 24px;
@@ -19,6 +19,7 @@
 		@media (min-width: 768px) and (max-width: 1023px) {
 			padding: 37px 0 100px 0;
 			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 1fr 1fr;
 			gap: 20px 24px;
 		}
 		@media (max-width: 767px) {
