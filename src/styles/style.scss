@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800&display=swap');
+@import './fonts/fonts';
 @import './vars/vars';
 @import './grid/grid';
 @import './button/button';
@@ -13,6 +13,8 @@
 @import './storage/storage';
 @import './production/production';
 @import './robot-style/robot-style';
+@import './production-item/production-item';
+@import './main-robot/main-robot';
 @import './popup/popup';
 
 * {

@@ -8,7 +8,7 @@
 	}
 	padding-top: 48px;
 	&__logo {
-		grid-column: 1 span 1;
+		grid-column: 1 span;
 		@media (min-width: 1024px) and (max-width: 1919px) {
 			grid-column: 2/3 span;
 		}
@@ -41,6 +41,11 @@
 		&:hover {
 			border: none;
 			background: #ff5722;
+		}
+		&--disabled {
+			color: var(--color-grey);
+			border: 2px solid var(--color-grey);
+			pointer-events: none;
 		}
 	}
 }

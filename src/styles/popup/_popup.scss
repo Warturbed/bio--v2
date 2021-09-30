@@ -1,6 +1,6 @@
 .popup {
 	&__background {
-		z-index: 99;
+		z-index: 999;
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -22,7 +22,7 @@
 		border-radius: 10px;
 		width: 496px;
 		height: 240px;
-		z-index: 999;
+		z-index: 9999;
 		@media (max-width: 767px) {
 			width: 236px;
 			height: 210px;
@@ -45,7 +45,7 @@
 			margin-top: 10px;
 		}
 		color: #4c5865;
-		max-width: 306px;
+		max-width: 320px;
 		margin-top: 23px;
 	}
 	&__img {
@@ -53,7 +53,7 @@
 		top: 10px;
 		width: 43px;
 		height: 52px;
-		background: url(../img/big-coin.png);
+		background: url(./img/big-coin.png);
 		background-size: cover;
 		background-position: center;
 	}
@@ -67,7 +67,7 @@
 		left: 25px;
 		width: 43px;
 		height: 52px;
-		background: url(../img/big-coin.png);
+		background: url(./img/big-coin.png);
 		background-size: cover;
 		background-position: center;
 	}
@@ -77,7 +77,7 @@
 		right: 10px;
 		width: 32px;
 		height: 32px;
-		background: url(../img/close-popup.png);
+		background: url(./img/close-popup.png);
 		background-size: 45%;
 		background-repeat: no-repeat;
 		background-position: center;

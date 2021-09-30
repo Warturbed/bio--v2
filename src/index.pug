@@ -7,124 +7,125 @@ html(lang="en")
         link(rel="stylesheet", href="./styles/style.css")
         title Document
     body
-        .wrapper.grid
-            header.header.grid
-                img.header__logo(src="./img/logo.png", alt="")
-                button.button.header__button Произвести биоробота
-            section.banner.grid
-                    .banner__content
-                        h1.banner__title Фабрика по производству биороботов
-                        span.banner__text класса «монитор-кресло»
-                    .banner__img
-            section.wallet 
-                    h2.title Кошелёк криптовалют
-                    ul.wallet__list 
-                        .wallet__coin
-                        .wallet__coin
-                        .wallet__coin
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin  
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin 
-                        .wallet__coin
-                    span.wallet__counter 45
-                    span.wallet__text biorobo монет
-                    .wallet__container 
-                        span.wallet__multiply Нацыганить
-                        input(type="checkbox" id="add")
-                        label(for="add") Цыганить по 5 монет
-            section.market
-                    h2.title Рынок комплектующих
-                    ul.product-list
-                        li.product-list__item
-                            .product-list__img
-                                img(src="./img/bio.png", alt="")
-                            h3.product-list__title Биомеханизм
-                            span.product-list__text Стоимость: 
-                                span.product-list__price 7 монет
-                            button.button.market__button Установить
-                        li.product-list__item
-                            .product-list__img
-                                img(src="./img/bio.png", alt="")
-                            h3.product-list__title Биомеханизм
-                            span.product-list__text Стоимость: 
-                                span.product-list__price 7 монет
-                            button.button.market__button Установить
-                        li.product-list__item
-                            .product-list__img
-                                img(src="./img/bio.png", alt="")
-                            h3.product-list__title Биомеханизм
-                            span.product-list__text Стоимость: 
-                                span.product-list__price 7 монет
-                            button.button.market__button Установить
-            section.storage 
-                    h2.title Склад
-                    ul.product-list
-                        li.product-list__item
+        .container
+            .wrapper.grid
+                header.header.grid
+                    img.header__logo(src="./img/logo.png", alt="")
+                    button.button.header__button Произвести биоробота
+                section.banner.grid
+                        .banner__content
+                            h1.banner__title Фабрика по производству биороботов
+                            span.banner__text класса «монитор-кресло»
+                        .banner__img
+                section.wallet 
+                        h2.title Кошелёк криптовалют
+                        ul.wallet__list 
+                            .wallet__coin
+                            .wallet__coin
+                            .wallet__coin
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin  
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin 
+                            .wallet__coin
+                        span.wallet__counter 45
+                        span.wallet__text biorobo монет
+                        .wallet__container 
+                            span.wallet__multiply Нацыганить
+                            input(type="checkbox" id="add")
+                            label(for="add") Цыганить по 5 монет
+                section.market
+                        h2.title Рынок комплектующих
+                        ul.product-list
+                            li.product-list__item
+                                .product-list__img
+                                    img(src="./img/bio.png", alt="")
                                 h3.product-list__title Биомеханизм
                                 span.product-list__text Стоимость: 
                                     span.product-list__price 7 монет
-                                span.product-list__counter 2 шт
-                                button.button.storage__button Установить
-                        li.product-list__item
+                                button.button.market__button Установить
+                            li.product-list__item
+                                .product-list__img
+                                    img(src="./img/bio.png", alt="")
                                 h3.product-list__title Биомеханизм
                                 span.product-list__text Стоимость: 
                                     span.product-list__price 7 монет
-                                span.product-list__counter 3 шт
-                                button.button.storage__button Установить
-                        li.product-list__item
+                                button.button.market__button Установить
+                            li.product-list__item
+                                .product-list__img
+                                    img(src="./img/bio.png", alt="")
                                 h3.product-list__title Биомеханизм
                                 span.product-list__text Стоимость: 
                                     span.product-list__price 7 монет
-                                span.product-list__counter 2 шт
-                                button.button.storage__button Установить
-            section.production 
-                    h2.title Производство
-                    .production__container
-                        .robot-style.production__style
-                            .robot-style__container
-                                span.robot-style__text Тип биоробота:
-                                .robot-style__control
-                                    input(type="radio" id="frontend" name="type" checked)   
-                                    label(for="frontend") FrontEnd
-                                    input(type="radio" id="design" name="type")   
-                                    label(for="design") Design
-                            .robot-style__container
-                                span.robot-style__text Стабилизатор:
-                                .robot-style__control
-                                    input(type="radio" id="male" name="gender" checked)   
-                                    label(for="male") Male
-                                    input(type="radio" id="female" name="gender")   
-                                    label(for="female") Female
-                        .production__control
-                            .production__img
-                            .production__img
-                            .production__img
-                            .production__img
-                            .production__img
-                            .production__img
-                            .production__img
-                            .production__img
-                            .production__img
-                        .production__banner
-                        button.button.production__button Произвести за 10 монет
-                        p.production__info-text Для производства биоробота не хватает 2 биомеханизма, 3 процессора и души
-        .popup.none
-            .popup__background 
-            .popup__content
-                .popup__coin
-                button.popup__close
-                p.popup__title Количество монет ограничено
-                p.popup__text Вы не можете нацыганить более 100 монет biorobo
+                                button.button.market__button Установить
+                section.storage 
+                        h2.title Склад
+                        ul.product-list
+                            li.product-list__item
+                                    h3.product-list__title Биомеханизм
+                                    span.product-list__text Стоимость: 
+                                        span.product-list__price 7 монет
+                                    span.product-list__counter 2 шт
+                                    button.button.storage__button Установить
+                            li.product-list__item
+                                    h3.product-list__title Биомеханизм
+                                    span.product-list__text Стоимость: 
+                                        span.product-list__price 7 монет
+                                    span.product-list__counter 3 шт
+                                    button.button.storage__button Установить
+                            li.product-list__item
+                                    h3.product-list__title Биомеханизм
+                                    span.product-list__text Стоимость: 
+                                        span.product-list__price 7 монет
+                                    span.product-list__counter 2 шт
+                                    button.button.storage__button Установить
+                section.production 
+                        h2.title Производство
+                        .production__container
+                            .robot-style.production__style
+                                .robot-style__container
+                                    span.robot-style__text Тип биоробота:
+                                    .robot-style__control
+                                        input(type="radio" id="frontend" name="type" checked)   
+                                        label(for="frontend") FrontEnd
+                                        input(type="radio" id="design" name="type")   
+                                        label(for="design") Design
+                                .robot-style__container
+                                    span.robot-style__text Стабилизатор:
+                                    .robot-style__control
+                                        input(type="radio" id="male" name="gender" checked)   
+                                        label(for="male") Male
+                                        input(type="radio" id="female" name="gender")   
+                                        label(for="female") Female
+                            .production__control
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                                button.production__img
+                            .production__banner
+                            button.button.production__button Произвести за 10 монет
+                            p.production__info-text Для производства биоробота не хватает 2 биомеханизма, 3 процессора и души
+            .popup.none
+                .popup__background 
+                .popup__content
+                    .popup__coin
+                    button.popup__close
+                    p.popup__title Количество монет ограничено
+                    p.popup__text Вы не можете нацыганить более 100 монет biorobo
                         
