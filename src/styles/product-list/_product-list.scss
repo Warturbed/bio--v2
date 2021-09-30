@@ -34,21 +34,20 @@
 		height: 128px;
 		margin-bottom: 25px;
 		filter: drop-shadow(0px 8px 90px #ff7f22);
-		background: url(./img/bio-market.png);
 		&--bio {
 			background: url(./img/bio-market.png);
-			background-repeat: no-repeat;
 			background-position: center;
+			background-repeat: no-repeat;
 		}
 		&--cpu {
 			background: url(./img/cpu-market.png);
-			background-repeat: no-repeat;
 			background-position: center;
+			background-repeat: no-repeat;
 		}
 		&--soul {
 			background: url(./img/soul-market.png);
-			background-repeat: no-repeat;
 			background-position: center;
+			background-repeat: no-repeat;
 		}
 	}
 	&__title {

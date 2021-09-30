@@ -11,18 +11,18 @@
 		grid-template-columns: repeat(6, 1fr);
 		grid-template-rows: repeat(2, 1fr);
 		gap: 60px 24px;
-		margin-top: 75px;
+		padding: 75px 0 236px 0;
 		@media (min-width: 1024px) and (max-width: 1919px) {
-			margin-top: 38px;
+			padding: 38px 0 196px 0;
 			gap: 40px 24px;
 		}
 		@media (min-width: 768px) and (max-width: 1023px) {
-			margin-top: 37px;
+			padding: 37px 0 100px 0;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 20px 24px;
 		}
 		@media (max-width: 767px) {
-			margin-top: 37px;
+			padding: 37px 0 96px 0;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(5, auto);
 			gap: 29px 24px;
