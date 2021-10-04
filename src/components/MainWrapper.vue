@@ -218,30 +218,20 @@
           </div>
         </section>
       </div>
-      <div class="popup" v-show="isPopupVisible">
-        <div class="popup__background"></div>
-        <div class="popup__content">
-          <div class="popup__coin" v-show="!isRobotPopupVisible"></div>
-          <button class="popup__close" @click="closePopup"></button>
-          <div class="popup__container">
-            <p class="popup__title" v-if="!isRobotPopupVisible">Количество монет ограничено</p>
-            <p class="popup__title" v-else>Биоробот произведён</p>
-            <p class="popup__text" v-if="!isRobotPopupVisible">Вы не можете нацыганить более 100 монет biorobo</p>
-            <p class="popup__text" v-else>Поздравляем! <br>Вы произвели биоробота</p>
-          </div>
-        </div>
-      </div>
+      <Popup v-show="isPopupVisible" :isRobotPopupVisible="isRobotPopupVisible" @closePopup="closePopup"/>
     </div>
 </template>
 
 <script>
 import {mapActions, mapGetters} from 'vuex'
 import ProdItem from '@/components/ProdItem.vue'
+import Popup from '@/components/Popup.vue'
 
 export default {
   name: 'MainWrapper',
   components: {
-    ProdItem
+    ProdItem,
+    Popup
   },
   data() {
     return {
@@ -284,7 +274,8 @@ export default {
     },
     // Проверяет достаточно ли элементов в производстве для показа возможности производства робота
     isEnoughToProduce() {
-      if (this.PRODUCTION.bio >=4 && this.PRODUCTION.cpu >=4 && this.PRODUCTION.soul >= 1 && this.COINS.length >= 10) {
+      if (this.PRODUCTION.bio >=4 && this.PRODUCTION.cpu >=4 &&
+      this.PRODUCTION.soul >= 1 && this.COINS.length >= 10) {
         return true
       } else {
         return false
@@ -320,13 +311,10 @@ export default {
       'PRODUCE_ROBOT'
     ]),
     addCoins() {
-      if (this.COINS.length + 1 <= 100) {
-        if (this.addFiveCoins) {
-          this.ADD_COINS(5)
-        }
-        else {
-          this.ADD_COINS(1)
-        }
+      if (!this.addFiveCoins && this.COINS.length + 1 <= 100) {
+        this.ADD_COINS(1)
+      } else if (this.addFiveCoins && this.COINS.length + 5 <= 100) {
+        this.ADD_COINS(5)
       } else {
         this.isPopupVisible = true
       }
