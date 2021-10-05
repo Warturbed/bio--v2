@@ -218,7 +218,11 @@
           </div>
         </section>
       </div>
-      <Popup v-show="isPopupVisible" :isRobotPopupVisible="isRobotPopupVisible" @closePopup="closePopup"/>
+      <Popup
+        v-show="isPopupVisible"
+        :isRobotPopupVisible="isRobotPopupVisible"
+        @closePopup="closePopup"
+      />
     </div>
 </template>
 
@@ -330,7 +334,11 @@ export default {
       }
     },
     sellItem(value) {
-      this.SELL_ITEM(value)
+      if (this.COINS.length + value > 100) {
+        this.isPopupVisible = true
+      } else {
+        this.SELL_ITEM(value)
+      }
     },
     closePopup() {
       this.isPopupVisible = false

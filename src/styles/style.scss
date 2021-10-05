@@ -18,7 +18,7 @@
 @import './popup/popup';
 
 * {
-	color: #fff;
+	color: var(--main-color);
 	font-family: 'Montserrat';
 	font-size: 16px;
 	line-height: 24px;
@@ -35,8 +35,4 @@
 body {
 	background: var(--background--color-main);
 	background-repeat: no-repeat;
-}
-
-.none {
-	display: none;
 }
