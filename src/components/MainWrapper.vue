@@ -469,10 +469,12 @@ export default {
 }
 .banner {
 	grid-column: 1/8 span;
+  align-items: center;
 	padding: 71px 0 75px 0;
 	@media (min-width: 768px) and (max-width: 1023px) {
 		grid-column: 1/4 span;
 		padding: 55px 0 55px 0;
+    align-items: start;
 	}
 	@media (min-width: 1024px) and (max-width: 1919px) {
 		padding: 77px 0 65px 0;
@@ -506,6 +508,10 @@ export default {
 		font: var(--font-info-regular);
 		color: var(--color-grey);
 		padding-top: 24px;
+    @media (min-width: 768px) and (max-width: 1023px) {
+			font: var(--font-text-medium);
+      font-weight: 600;
+		}
 		@media (max-width: 767px) {
 			display: none;
 		}
@@ -549,7 +555,7 @@ export default {
 	&__list {
 		display: flex;
 		min-height: 20px;
-		margin: 60px 0 26px 7px;
+		margin: 60px 0 20px 7px;
 		@media (min-width: 768px) and (max-width: 1919px) {
 			margin: 39px 0 24px 7px;
 		}
@@ -634,7 +640,10 @@ export default {
 		font: var(--font-text-bold);
 		margin: 0 auto;
 		background: linear-gradient(180deg, #ff7f22 0%, #ff5722 100%);
-		margin-top: 24px;
+		margin-top: 22px;
+    @media (max-width: 1919px) {
+			margin-top: 21px;
+		}
 		width: 200px;
 		&:hover {
 			background: linear-gradient(0deg, #ff5722, #ff5722);
@@ -652,7 +661,7 @@ export default {
 	}
 	grid-column: 2/6 span;
 	@media (min-width: 768px) and (max-width: 1023px) {
-		padding: 55px 0 102px 0;
+		padding: 55px 0 90px 0;
 		grid-column: 1/4 span;
 	}
 	@media (max-width: 767px) {
@@ -668,7 +677,7 @@ export default {
 		border: 2px solid;
 		margin-top: 24px;
 		@media (min-width: 1024px) and (max-width: 1919px) {
-			margin-top: 28px;
+			margin-top: 22px;
 		}
 		&:hover {
 			color: #212529;
@@ -697,7 +706,7 @@ export default {
 			margin-right: 20px;
 		}
 		&__item:last-child {
-			margin-top: 35px;
+			margin-top: 43px;
 		}
 	}
 	@media (max-width: 767px) {
@@ -718,25 +727,35 @@ export default {
 		justify-content: center;
 		align-items: center;
 		height: 128px;
-		svg {
+    margin-bottom: 30px;
+    @media (max-width: 1919px) {
+			margin-bottom: 25px;
+		}
+    svg {
 			filter: drop-shadow(0px 8px 90px #ff7f22);
 		}
 	}
 	&__title {
-		font: var(--font-info-bold);
+		font: var(--font-text-big);
+    @media (max-width: 1919px) {
+			font: var(--font-info-regular);
+		}
 	}
 	&__text {
 		font: var(--font-text-regular);
 		color: var(--color-grey);
-		margin-top: 5px;
+		margin-top: 10px;
+    @media (max-width: 1919px) {
+			margin-top: 7px;
+		}
 	}
 	&__price {
 		font: var(--font-text-bold);
 		color: var(--color-grey);
 	}
 	&__counter {
-		font: var(--font-info-sm);
-		margin-top: 16px;
+		font: var(--font-text-big);
+		margin-top: 15px;
 	}
 }
 .production {

@@ -45,10 +45,11 @@ body {
 	--font-bold: 600 56px/72px var(--font-family);
 	--font-semibold: 600 32px/40px var(--font-family);
 
-	--font-info-bold: 700 20px/24px var(--font-family);
-	--font-info-regular: 600 20px/32px var(--font-family);
-	--font-info-sm: 500 20px/32px var(--font-family);
+	--font-info-bold: 700 24px/24px var(--font-family);
+	--font-info-regular: 600 24px/32px var(--font-family);
+	--font-info-sm: 500 24px/32px var(--font-family);
 
+  --font-text-big: 600 20px/24px var(--font-family);
 	--font-text-bold: 600 16px/24px var(--font-family);
 	--font-text-regular: 500 16px/24px var(--font-family);
 	--font-text-medium: 500 14px/20px var(--font-family);
@@ -69,7 +70,7 @@ body {
 		--font-semibold: 600 24px/32px var(--font-family);
 		--font-info-bold: 700 18px/24px var(--font-family);
 
-		--font-info-regular: 600 14px/20px var(--font-family);
+		--font-info-regular: 600 18px/24px var(--font-family);
 		--font-info-sm: 600 20px/24px var(--font-family);
 	}
 	// < 767
@@ -78,7 +79,7 @@ body {
 		--font-semibold: 600 24px/32px var(--font-family);
 
 		--font-info-bold: 700 18px/24px var(--font-family);
-		--font-info-regular: 600 14px/20px var(--font-family);
+		--font-info-regular: 600 18px/24px var(--font-family);
 		--font-info-sm: 600 18px/24px var(--font-family);
 	}
 }
