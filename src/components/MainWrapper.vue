@@ -19,14 +19,14 @@
           <h2 class="title">Кошелёк криптовалют</h2>
           <ul class="wallet__list"> 
             <li class="wallet__coin"
-            v-for="coin, index in COINS"
-            :key="index"
-            :style=" {zIndex: 100-index}"
+              v-for="coin, index in [...Array(COINS).keys()]"
+              :key="index"
+              :style=" {zIndex: 100-index}"
             >
             </li>
           </ul>
-          <span class="wallet__counter">{{COINS.length}}</span>
-          <span class="wallet__text">biorobo {{declOfNum(COINS.length, ['монета', 'монеты', 'монет'])}}</span>
+          <span class="wallet__counter">{{COINS}}</span>
+          <span class="wallet__text">biorobo {{declOfNum(COINS, ['монета', 'монеты', 'монет'])}}</span>
           <div class="wallet__container">
             <button class="wallet__multiply"
               @click="addCoins"
@@ -46,7 +46,7 @@
                 <span class="product-list__price">7 монет</span>
               </span>
               <button class="button market__button"
-                :class=" COINS.length < 7 ? 'market__button--disabled' : '' "
+                :class=" COINS < 7 ? 'market__button--disabled' : '' "
                 @click="buyItem(7)"
                 >Установить
               </button>
@@ -58,7 +58,7 @@
                 <span class="product-list__price">5 монет</span>
               </span>
               <button class="button market__button"
-                :class=" COINS.length < 5 ? 'market__button--disabled' : '' "
+                :class=" COINS < 5 ? 'market__button--disabled' : '' "
                 @click="buyItem(5)"
                 >Установить
               </button>
@@ -70,7 +70,7 @@
                 <span class="product-list__price">25 монет</span>
               </span>
               <button class="button market__button"
-                :class=" COINS.length < 25 ? 'market__button--disabled' : '' "
+                :class=" COINS < 25 ? 'market__button--disabled' : '' "
                 @click="buyItem(25)"
                 >Установить
               </button>
@@ -152,67 +152,67 @@
               @click="produceRobot">Произвести за 10 монет
             </button>
             <p class="production__info-text"
-              v-show=" 4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & 10 > COINS.length"
+              v-show=" 4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & 10 > COINS"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма, {{ 4-PRODUCTION.cpu }} процессора, души и денег
             </p>
             <p class="production__info-text"
-              v-show=" 4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & COINS.length > 10"
+              v-show=" 4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & COINS > 10"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма, {{ 4-PRODUCTION.cpu }} процессора и души
             </p>
             <p class="production__info-text"
-              v-show=" 4 === PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & COINS.length >= 10"
+              v-show=" 4 === PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & COINS >= 10"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.cpu }} процессора и души
             </p>
             <p class="production__info-text"
-              v-show=" 4 === PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & 10 >= COINS.length"
+              v-show=" 4 === PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 > PRODUCTION.soul & 10 >= COINS"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.cpu }} процессора, души и денег
             </p>
             <p class="production__info-text"
-              v-show=" 4 > PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 > PRODUCTION.soul & COINS.length >= 10"
+              v-show=" 4 > PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 > PRODUCTION.soul & COINS >= 10"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма и души
             </p>
             <p class="production__info-text"
-              v-show=" 4 > PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 > PRODUCTION.soul & 10 >= COINS.length"
+              v-show=" 4 > PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 > PRODUCTION.soul & 10 >= COINS"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма, души и денег
             </p>
             <p class="production__info-text"
-              v-show="4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS.length >= 10"
+              v-show="4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS >= 10"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма и {{ 4-PRODUCTION.cpu }} процессора
             </p>
             <p class="production__info-text"
-              v-show="4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS.length"
+              v-show="4 > PRODUCTION.bio & 4 > PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма, {{ 4-PRODUCTION.cpu }} процессора и денег
             </p>
             <p class="production__info-text"
-              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS.length"
+              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS"
               >Для производства биоробота не хватает денег
             </p>
             <p class="production__info-text"
-              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS.length >= 10"
+              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS >= 10"
               >Можно произвести биоробота
             </p>
             <p class="production__info-text"
-              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 0 === PRODUCTION.soul & 10 > COINS.length"
+              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 0 === PRODUCTION.soul & 10 > COINS"
               >Для производства биоробота не хватает души и денег
             </p>
             <p class="production__info-text"
-              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 0 === PRODUCTION.soul & COINS.length >= 10"
+              v-show="4 === PRODUCTION.bio & 4 === PRODUCTION.cpu & 0 === PRODUCTION.soul & COINS >= 10"
               >Для производства биоробота не хватает души
             </p>
             <p class="production__info-text"
-              v-show="4 === PRODUCTION.bio & 4 != PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS.length"
+              v-show="4 === PRODUCTION.bio & 4 != PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS"
               >Для производства биоробота не хватает{{ 4-PRODUCTION.bio }}  процессора и денег
             </p>
             <p class="production__info-text"
-              v-show="4 === PRODUCTION.bio & 4 != PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS.length >= 10"
+              v-show="4 === PRODUCTION.bio & 4 != PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS >= 10"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.cpu }} процессора
             </p>
             <p class="production__info-text" 
-              v-show=" 4 != PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS.length"
+              v-show=" 4 != PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & 10 > COINS"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма и денег
             </p>
             <p class="production__info-text" 
-              v-show="4 != PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS.length >= 10"
+              v-show="4 != PRODUCTION.bio & 4 === PRODUCTION.cpu & 1 === PRODUCTION.soul & COINS >= 10"
               >Для производства биоробота не хватает {{ 4-PRODUCTION.bio }} биомеханизма
             </p>
           </div>
@@ -279,7 +279,7 @@ export default {
     // Проверяет достаточно ли элементов в производстве для показа возможности производства робота
     isEnoughToProduce() {
       if (this.PRODUCTION.bio >=4 && this.PRODUCTION.cpu >=4 &&
-      this.PRODUCTION.soul >= 1 && this.COINS.length >= 10) {
+      this.PRODUCTION.soul >= 1 && this.COINS >= 10) {
         return true
       } else {
         return false
@@ -315,9 +315,9 @@ export default {
       'PRODUCE_ROBOT'
     ]),
     addCoins() {
-      if (!this.addFiveCoins && this.COINS.length + 1 <= 100) {
+      if (!this.addFiveCoins && this.COINS + 1 <= 100) {
         this.ADD_COINS(1)
-      } else if (this.addFiveCoins && this.COINS.length + 5 <= 100) {
+      } else if (this.addFiveCoins && this.COINS + 5 <= 100) {
         this.ADD_COINS(5)
       } else {
         this.isPopupVisible = true
@@ -329,12 +329,12 @@ export default {
       return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
     },
     buyItem(value) {
-      if (this.COINS.length >= value) {
+      if (this.COINS >= value) {
         this.BUY_ITEM(value)
       }
     },
     sellItem(value) {
-      if (this.COINS.length + value > 100) {
+      if (this.COINS + value > 100) {
         this.isPopupVisible = true
       } else {
         this.SELL_ITEM(value)

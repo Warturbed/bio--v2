@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    coins : [0,0,0,0,0],
+    coins : 5,
     storage : {
       bio: 2,
       cpu: 2,
@@ -17,21 +17,21 @@ export default createStore({
   mutations: {
     ADD_COINS_TO_STATE: (state, value) => {
       if (value === 5) {
-        state.coins.push(0,0,0,0,0)
+        state.coins = state.coins + 5
       }
       else {
-        state.coins.push(0)
+        state.coins++
       }
     },
     BUY_ITEM_IN_STORAGE: (state, value) => {
       if (value === 7) {
-        state.coins.splice(0, 7)
+        state.coins = state.coins - 7
         state.storage.bio++
       } else if (value === 5) {
-        state.coins.splice(0, 5)
+        state.coins = state.coins - 5
         state.storage.cpu++
       } else {
-        state.coins.splice(0, 25)
+        state.coins = state.coins - 25
         state.storage.soul++
       }
       
@@ -39,13 +39,13 @@ export default createStore({
     SELL_ITEM_FROM_STORAGE: (state, value) => {
       if (value === 5) {
         state.storage.bio--
-        state.coins.push(0,0,0,0,0)
+        state.coins = state.coins + 5
       } else if (value === 3) {
-        state.storage.cpu--
+        state.coins = state.coins + 3
         state.coins.push(0,0,0)
       } else {
         state.storage.soul--
-        state.coins.push(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+        state.coins = state.coins + 15
       }
     },
     SEND_ITEM_TO_PRODUCTION: (state, type) => {
@@ -73,7 +73,7 @@ export default createStore({
       }
     },
     PRODUCE_ROBOT: (state) => {
-      state.coins.splice(0, 10)
+      state.coins = state.coins - 10
       state.production = {bio: 0, cpu: 0, soul: 0}
     }
   },
