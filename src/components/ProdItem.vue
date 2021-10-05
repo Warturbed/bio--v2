@@ -1,5 +1,10 @@
 <template>
-  <button :class="changeClass" @click="toggleActive(item_data.type)"></button>
+  <svg @click="toggleActive(item_data.type)" :class="changeClass">
+    <rect x="1" y="1" width="48" height="48" rx="3" fill="#333940"/>
+    <use xlink:href="@/img/sprites.svg#bio"  v-if="item_data.type === 'bio'"></use>
+    <use xlink:href="@/img/sprites.svg#cpu" v-else-if="item_data.type === 'cpu'"></use>
+    <use xlink:href="@/img/sprites.svg#soul" v-else></use>
+  </svg>
 </template>
 
 <script>
@@ -16,7 +21,7 @@ export default {
     }
   },
   computed: {
-    ..mapGetters([
+    ...mapGetters([
       'STORAGE',
       'PRODUCTION'
     ]),
@@ -34,7 +39,7 @@ export default {
     },
   },
   methods: {
-    ..mapActions([
+    ...mapActions([
       'SEND_TO_PROD',
       'BACK_TO_STORAGE'
     ]),
@@ -62,40 +67,57 @@ export default {
 .production-item {
 	width: 48px;
 	height: 48px;
-	background-size: cover;
+  border-radius: 4px;
 	cursor: pointer;
 	&__bio.disabled {
-		background: url(./img/bio-sprites.png) -0 -0;
+    fill: #4C5865;
 		pointer-events: none;
 	}
 	&__bio.choose {
-		background: url(./img/bio-sprites.png) -48px -0;
+		fill: white;
 	}
 	&__bio.active {
-		background: url(./img/bio-sprites.png) -96px -0;
+		fill: #FF7F22;
+    rect {
+      width: 46px;
+      height: 46px;
+      stroke: #FF7F22;
+      stroke-width: 2;
+    }
 	}
 	&__cpu.disabled {
-		background: url(./img/cpu-sprites.png) -0 -0;
+		fill: #4C5865;
 		pointer-events: none;
 	}
 	&__cpu.choose {
-		background: url(./img/cpu-sprites.png) -48px -0;
+		fill: white;
 		background-position: center;
 	}
 	&__cpu.active {
-		background: url(./img/cpu-sprites.png) -96px -0;
+    fill: #FF7F22;
+    rect {
+      width: 46px;
+      height: 46px;
+      stroke: #FF7F22;
+      stroke-width: 2;
+    }
 	}
 	&__soul.disabled {
-		background: url(./img/soul_sprites.png);
+		fill: #4C5865;
 		pointer-events: none;
 		background-position: center;
 	}
 	&__soul.choose {
-		background: url(./img/soul_sprites.png);
+		fill: white;
 	}
 	&__soul.active {
-		background: url(./img/soul_sprites.png);
-		background-position: 100% 0;
+		fill: #FF7F22;
+    rect {
+      width: 46px;
+      height: 46px;
+      stroke: #FF7F22;
+      stroke-width: 2;
+    }
 	}
 }
 </style>

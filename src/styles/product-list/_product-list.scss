@@ -30,24 +30,12 @@
 		}
 	}
 	&__img {
-		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		height: 128px;
-		margin-bottom: 25px;
-		filter: drop-shadow(0px 8px 90px #ff7f22);
-		&--bio {
-			background: url(./img/bio-market.png);
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		&--cpu {
-			background: url(./img/cpu-market.png);
-			background-position: center;
-			background-repeat: no-repeat;
-		}
-		&--soul {
-			background: url(./img/soul-market.png);
-			background-position: center;
-			background-repeat: no-repeat;
+		svg {
+			filter: drop-shadow(0px 8px 90px #ff7f22);
 		}
 	}
 	&__title {

@@ -41,8 +41,8 @@ export default createStore({
         state.storage.bio--
         state.coins = state.coins + 5
       } else if (value === 3) {
+        state.storage.cpu--
         state.coins = state.coins + 3
-        state.coins.push(0,0,0)
       } else {
         state.storage.soul--
         state.coins = state.coins + 15

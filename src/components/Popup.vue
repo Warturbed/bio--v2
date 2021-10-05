@@ -4,7 +4,7 @@
         <div class="popup__content">
           <div class="popup__coin" v-show="!isRobotPopupVisible"></div>
           <button class="popup__close" @click="closePopup"></button>
-          <div class="popup__container"> {{isRobotPopupVisible}}
+          <div class="popup__container">
             <p class="popup__title" v-if="!isRobotPopupVisible">Количество монет ограничено</p>
             <p class="popup__title" v-else>Биоробот произведён</p>
             <p class="popup__text" v-if="!isRobotPopupVisible">Вы не можете нацыганить более 100 монет biorobo</p>

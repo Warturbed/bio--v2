@@ -40,7 +40,11 @@
           <h2 class="title">Рынок комплектующих</h2>
           <ul class="product-list">
             <li class="product-list__item">
-              <div class="product-list__img product-list__img--bio"></div>
+              <div class="product-list__img">
+                <svg fill="#FF7F22" width="101" height="67">
+                  <use xlink:href="@/img/sprites.svg#bio-big"></use>
+                </svg>
+              </div>
               <h3 class="product-list__title">Биомеханизм</h3>
               <span class="product-list__text">Стоимость:
                 <span class="product-list__price">7 монет</span>
@@ -52,7 +56,11 @@
               </button>
             </li>
             <li class="product-list__item">
-              <div class="product-list__img product-list__img--cpu"></div>
+              <div class="product-list__img">
+                <svg fill="#FF7F22" width="80" height="80">
+                  <use xlink:href="@/img/sprites.svg#cpu-big"></use>
+                </svg>
+              </div>
               <h3 class="product-list__title">Процессор</h3>
               <span class="product-list__text">Стоимость:
                 <span class="product-list__price">5 монет</span>
@@ -64,7 +72,11 @@
               </button>
             </li>
             <li class="product-list__item">
-              <div class="product-list__img product-list__img--soul"></div>
+              <div class="product-list__img">
+                <svg fill="#FF7F22" width="88" height="88">
+                  <use xlink:href="@/img/sprites.svg#soul-big"></use>
+                </svg>
+              </div>
               <h3 class="product-list__title">Душа</h3>
               <span class="product-list__text">Стоимость:
                 <span class="product-list__price">25 монет</span>
@@ -355,5 +367,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-
 </style>
